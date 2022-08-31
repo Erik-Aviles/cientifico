@@ -1,0 +1,22 @@
+#automatiza el proceso de enviar a produccion nuestro proyecto
+language: node_js #establecer lenguaje
+cache: 
+  directories:
+    - ~/.npm  #ubicacion de nuestro directorio
+node_js:
+  - '12'  #version de node
+git:
+  depth: 3  #va leer hasta el tercer nivel
+script:
+  - yarn build #comando a ejecutar nuestro proyecto
+deploy:
+  provider: pages #donde va estar alojado
+  edge: true           #control de versiones
+  skip-cleanup: true   #estructura de compilaciones
+  keep-history: true   #mantener un historial
+  github-token: $GITHUB_TOKEN  #token generado para conectar con gitgub
+  local-dir: dist/      #directorio sobre el cual vamos a trabajar
+  targer-branch: gh-pages #la rama donde se va ha guardar los elementos
+  commit_message: "Deploy Release"  #generar commit
+  on:
+    branch: master    #sobre quien va actuar

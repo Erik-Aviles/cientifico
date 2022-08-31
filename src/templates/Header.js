@@ -4,12 +4,12 @@ const Header = () => {
     <div class="Header-main">
         <div class="Header-logo">
             <h2>
-               
-                <a href="/">
+
+                <a href="#/">
                     The Rickand Morty 
                 </a>
             </h2>
-        </div>
+        </div> 
         <div class="Header-nav">
             <h2>
                
