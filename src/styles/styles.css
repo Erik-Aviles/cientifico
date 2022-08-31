@@ -145,7 +145,8 @@ body {
   display: flex;
   justify-content: space-between;
   color: #3C3E44;
-  background: #FF9800;
+  background: rgb(231,174,95);
+  background: linear-gradient(90deg, rgba(231,174,95,1) 40%, rgba(60,62,68,1) 100%);
 }
 
 .Characters-item a {
