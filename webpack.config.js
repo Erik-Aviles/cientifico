@@ -2,12 +2,14 @@ const path = require('path');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const { resolve } = require('path');
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
 
 module.exports = {
     entry: './src/index.js',
     output: {
         path: path.resolve(__dirname, 'dist'),
-        filename: 'main.js',
+        filename: '[name][contenthash].js',
         assetModuleFilename: 'assets/image/[hash][ext][query]'
     },
     resolve: {
@@ -32,8 +34,8 @@ module.exports = {
                     loader: 'url-loader',
                     options: {
                         limit: 10000,
-                        mimetype: "aplication/font-woff",
-                        name: '[name].[ext]',
+                        mimetype: "application/font-woff",
+                        name: '[name].[contenthash].[ext]',
                         outputPath: './assets/font/',
                         publicPath: './assets/font/',
                         esModule: false
@@ -56,5 +58,12 @@ module.exports = {
                 { from: path.resolve(__dirname, 'src', 'assets/image'), to: 'assets/image'},
             ]
         })
-    ]
+    ],
+    optimization : {
+        minimize: true,
+        minimizer: [
+            new CssMinimizerPlugin(),
+            new TerserPlugin(),
+        ]
+    }
 }
