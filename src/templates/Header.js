@@ -4,9 +4,8 @@ const Header = () => {
     <div class="Header-main">
         <div class="Header-logo">
             <h2>
-
                 <a href="#/">
-                    The Rickand Morty 
+                    <img src="https://the-rick-and-morty-api.herokuapp.com/static/media/logo.1c95a02a.png" alt="Rick and Morty" />
                 </a>
             </h2>
         </div> 

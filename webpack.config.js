@@ -7,7 +7,8 @@ module.exports = {
     entry: './src/index.js',
     output: {
         path: path.resolve(__dirname, 'dist'),
-        filename: 'main.js'
+        filename: 'main.js',
+        assetModuleFilename: 'assets/image/[hash][ext][query]'
     },
     resolve: {
         extensions: ['.js'],
@@ -22,14 +23,23 @@ module.exports = {
                 }
             },
             {
-                test: /\.(png|jpe?g|gif|svg)$/,
-                use: [
-                    {
-                        loader: 'file-loader',
-                        options: { name: '/src/asset/[hash].[ext]' },
-                    },
-                ],
+                test: /\.png|.svg$/,
+                type: 'asset/resource'
             },
+            {
+                test: /\.(woff|woff2)$/,
+                use: {
+                    loader: 'url-loader',
+                    options: {
+                        limit: 10000,
+                        mimetype: "aplication/font-woff",
+                        name: '[name].[ext]',
+                        outputPath: './assets/font/',
+                        publicPath: './assets/font/',
+                        esModule: false
+                    },
+                }
+            }
         ]
     },
     plugins: [
@@ -42,7 +52,9 @@ module.exports = {
         ),
         new CopyWebpackPlugin({
             patterns: [
-                { from: './src/styles/styles.css', to: ''}],
+                { from: './src/styles/styles.css', to: ''},
+                { from: path.resolve(__dirname, 'src', 'assets/image'), to: 'assets/image'},
+            ]
         })
     ]
 }

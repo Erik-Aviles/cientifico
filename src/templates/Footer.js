@@ -1,27 +1,29 @@
+import github from '../assets/image/icons8-github.svg';
+import twiter from '../assets/image/icons8-twitter.svg';
+import email from '../assets/image/icons8-email-96.png';
+
 const Footer = () => {
     const view = `
-    <footer class="Footer">
             <div class="Social-media">
                 <ul>
                     <li> 
                         <a href="">
-                            <img src="../src/asset/icons8-github.svg" alt="github">
+                            <img src="${github}" alt="github" />
                         </a>
                     </li>
                     <li> 
                         <a href="">
-                            <img src="../src/asset/icons8-twitter.svg" alt="twitwer">
+                            <img src="${twiter}" alt="twiter" />
                         </a>
                     </li>
                     <li> 
                         <a href="">
-                            <img src="../src/asset/icons8-email-96.png" alt="email">
+                            <img src="${email}" alt="email" />
                         </a>
                     </li>
                 </ul>
             </div>
-            <p> <> by <span>Erika Aviles</span> 2022</>
-    </footer>
+            <p> ♥♠ by <span>Erika Aviles</span> 2022</p>
     `;
     return view;
 };
