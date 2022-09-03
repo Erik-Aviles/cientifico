@@ -1,8 +1,8 @@
 
 @font-face {
   font-family: 'Lora';
-  src: url('../assets/font/lora-v26-latin-regular.woff2') format('woff2'),
-  url('../assets/font/lora-v26-latin-regular.woff') format('woff');
+  src: url('../assets/fonts/lora-v26-latin-regular.woff2') format('woff2'),
+  url('../assets/fonts/lora-v26-latin-regular.woff') format('woff');
   font-weight: 700;
   font-style: normal;
 }

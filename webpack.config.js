@@ -1,5 +1,6 @@
 const path = require('path');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const { resolve } = require('path');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
@@ -23,6 +24,13 @@ module.exports = {
                 use: {
                     loader: 'babel-loader',
                 }
+            },
+            {
+                test: /\.css|.styl$/i,
+                use: [MiniCssExtractPlugin.loader,
+                  'css-loader',
+                  'stylus-loader'
+                ],
             },
             {
                 test: /\.png|.svg$/,
@@ -52,12 +60,17 @@ module.exports = {
                 filename: './index.html',
             }
         ),
+        new MiniCssExtractPlugin(
+            {
+                filename: 'assets/[name].[contenthash].css'
+            }
+        ),
         new CopyWebpackPlugin({
             patterns: [
-                { from: './src/styles/styles.css', to: ''},
                 { from: path.resolve(__dirname, 'src', 'assets/image'), to: 'assets/image'},
             ]
-        })
+        }),
+        
     ],
     optimization : {
         minimize: true,
