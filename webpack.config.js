@@ -15,6 +15,14 @@ module.exports = {
     },
     resolve: {
         extensions: ['.js'],
+        alias: {
+            '@utiles': path.resolve(__dirname, 'src/utiles/'),
+            '@templates': path.resolve(__dirname, 'src/templates/'),
+            '@styles': path.resolve(__dirname, 'src/styles/'),
+            '@routers': path.resolve(__dirname, 'src/routers/'),
+            '@pages': path.resolve(__dirname, 'src/pages/'),
+            '@image': path.resolve(__dirname, 'src/assets/image/'),
+        },
     },
     module: {
         rules: [

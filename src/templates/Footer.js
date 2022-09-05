@@ -1,6 +1,6 @@
-import github from '../assets/image/icons8-github.svg';
-import twiter from '../assets/image/icons8-twitter.svg';
-import email from '../assets/image/icons8-email-96.png';
+import github from '@image/icons8-github.svg';
+import twiter from '@image/icons8-twitter.svg';
+import email from '@image/icons8-email-96.png';
 
 const Footer = () => {
     const view = `

@@ -1,4 +1,4 @@
-import getData from "../utiles/getData";
+import getData from "@utiles/getData";
 
 
 const ListLocations = async() => {

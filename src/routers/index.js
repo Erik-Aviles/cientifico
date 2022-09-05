@@ -1,14 +1,14 @@
-import Header from '../templates/Header';
-import Home from '../pages/Home';
-import Character from '../pages/Character';
-import Section from '../pages/Section';
-import ListCharacters from '../pages/List-characters';
-import ListEpisodes from '../pages/List-episodes';
-import ListLocations from '../pages/List-locations';
-import Footer from '../templates/Footer';
-import Error404 from '../pages/Error404';
-import getHash from '../utiles/getHash';
-import resolveRoutes from '../utiles/resolveRoutes';
+import Header from '@templates/Header';
+import Home from '@pages/Home';
+import Character from '@pages/Character';
+import Section from '@pages/Section';
+import ListCharacters from '@pages/List-characters';
+import ListEpisodes from '@pages/List-episodes';
+import ListLocations from '@pages/List-locations';
+import Footer from '@templates/Footer';
+import Error404 from '@pages/Error404';
+import getHash from '@utiles/getHash';
+import resolveRoutes from '@utiles/resolveRoutes';
 
 const routes = {
     '/': Home,
