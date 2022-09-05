@@ -1,4 +1,4 @@
-const API = 'https://rickandmortyapi.com/api/';
+const API = process.env.API;
 
 const getData = async (id) => {
     const apiURL = id ? `${API}${id}` : API;    
