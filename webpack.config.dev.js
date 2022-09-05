@@ -12,7 +12,7 @@ module.exports = {
         assetModuleFilename: 'assets/image/[hash][ext][query]'
     },
     mode: 'development',
-    /* watch: true, */ //activar script en package.json
+    watch: true, 
     resolve: {
         extensions: ['.js'],
         alias: {
