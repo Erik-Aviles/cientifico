@@ -45,7 +45,7 @@ module.exports = {
                 type: 'asset/resource'
             },
             {
-                test: /\.(woff|woff2)$/,
+                test: /\.woff|.woff2$/,
                 use: {
                     loader: 'url-loader',
                     options: {
@@ -53,7 +53,7 @@ module.exports = {
                         mimetype: "application/font-woff",
                         name: '[name].[contenthash].[ext]',
                         outputPath: './assets/font/',
-                        publicPath: './assets/font/',
+                        publicPath: '../assets/font/',
                         esModule: false
                     },
                 }
