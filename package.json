@@ -6,7 +6,6 @@
   "scripts": {
     "build": "node ./scripts/create-env.js && webpack --mode production --config webpack.config.js",
     "dev": "webpack --config webpack.config.dev.js",
-    "dev:watch": "webpack --watch --config webpack.config.dev.js",
     "start": "webpack-dev-server --open --config webpack.config.dev.js"
   },
   "keywords": [
